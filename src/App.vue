@@ -1,12 +1,18 @@
 <script>
-import AppHeader from './components/AppHeader.vue'
-import AppMain from './components/AppMain.vue'
+import AppHeader from './components/AppHeader.vue';
+import ListFilm from './components/ListFilm.vue';
+import ListSeries from './components/ListSeries.vue'
+
+
 import axios from 'axios';
 import { store } from "./store.js"
 export default{
   components:{
     AppHeader,
-    AppMain,
+    ListFilm,
+    ListSeries
+
+    
 
 
   },
@@ -20,14 +26,26 @@ export default{
   },
   methods:{
     getMovies(){
-      let myUrl = `${store.apiUrl}&query=${store.searchText}`
-      axios.get(myUrl)
-      .then((response) => {
-          this.store.moviesList = response.data.results;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      let Api='https://api.themoviedb.org/3/search';
+
+      let filmApi = Api + '/movie?api_key=addb82fb3a7f441748d95485d50f36bc';
+
+      let seriesApi = Api +'/tv?api_key=addb82fb3a7f441748d95485d50f36bc';
+
+      if(store.searchText.length>0){
+        filmApi +=`&query=${store.searchText}`;
+        seriesApi +=`&query=${store.searchText}`;
+
+        axios.get(filmApi)
+          .then(response => {
+            this.store.moviesList=response.data.results;
+          })
+
+          axios.get(seriesApi)
+          .then(response => {
+            this.store.seriesList = response.data.results;
+          })
+      }
 
     }
   }
@@ -39,7 +57,12 @@ export default{
 <template>
 
   <AppHeader  @inputSearch="getMovies"></AppHeader>
-  <AppMain></AppMain>
+
+  <main>
+    <ListFilm/>
+
+    <ListSeries/>
+  </main>
  
 </template>
 
