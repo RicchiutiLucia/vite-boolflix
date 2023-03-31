@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <h3 v-if="store.seriesList.length>0">Lista Serie TV</h3>
+    <h1 v-if="store.seriesList.length > 0">Lista Serie TV:</h1>
     <div class="box" v-for="(serie,i) in store.seriesList" :key="i">
         <SingleSeries
             :title="serie.name"

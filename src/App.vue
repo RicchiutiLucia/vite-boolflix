@@ -25,7 +25,7 @@ export default{
     }
   },
   methods:{
-    getMovies(){
+    getFilmAndSeries(){
       let Api='https://api.themoviedb.org/3/search';
 
       let filmApi = Api + '/movie?api_key=addb82fb3a7f441748d95485d50f36bc';
@@ -56,7 +56,7 @@ export default{
 
 <template>
 
-  <AppHeader  @inputSearch="getMovies"></AppHeader>
+  <AppHeader  @inputSearch="getFilmAndSeries"></AppHeader>
 
   <main>
     <ListFilm/>
