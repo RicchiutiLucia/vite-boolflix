@@ -19,19 +19,8 @@
       <a href="!#">BOOLFLIX</a>
     </div>
     <div class="selection">
-      <form >
-        <label for="search">
-          <input
-            id="search"
-            type="text"
-            name="search"
-            placeholder="Scegli il Film o la Serie TV"
-            v-model="store.searchText"
-            @keyup.enter="$emit('inputSearch', store.searchText)"
-          >
-          <button>Cerca</button>
-        </label>
-      </form>
+      <input id="search" type="text" name="search" placeholder="Scegli il Film o la Serie TV" v-model="store.searchText" >
+      <button @click="$emit('inputSearch')">Cerca</button>
     </div>
   </header>
 
