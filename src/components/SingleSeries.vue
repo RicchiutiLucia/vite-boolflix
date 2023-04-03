@@ -42,7 +42,8 @@ export default {
         <div class="card">
             <div class="card-inner">
                 <div class="card-front">
-                <img :src="imageApi" :alt="this.title">
+                <img :src="imageApi" :alt="this.title" v-if="this.image != null">
+                 <img v-else src="../assets/immagineNonTrovata.jpg">
             </div>
             <div class="card-back">
                 <h1  v-if="this.title.length > 0" class="title">{{ this.title }}</h1>
