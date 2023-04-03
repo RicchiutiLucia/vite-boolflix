@@ -1,6 +1,6 @@
 <script>
     import {store} from '../store.js';
-    import SingleFilm from './SingleFilm.vue';
+    import SingleFilm from '../components/SingleFIlm.vue';
     export default {
         name:'ListFilm',
         components:{
@@ -22,7 +22,9 @@
             :title="film.title"
             :originalTitle="film.original_title"
             :language="film.original_language"
-            :vote="film.vote_average"
+            :vote="Math.floor(film.vote_average / 2)"
+            :image="film.poster_path"
+
         />
     </div>
 

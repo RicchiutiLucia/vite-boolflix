@@ -21,7 +21,8 @@
             :title="serie.name"
             :originalTitle="serie.original_name"
             :language="serie.original_language"
-            :vote="serie.vote_average"
+            :vote="Math.floor(serie.vote_average / 2)"
+            :image="serie.poster_path"
         />
     </div>
 </template>
