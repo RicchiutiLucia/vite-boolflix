@@ -3,6 +3,7 @@
   import { store } from '../store.js';
     export default {
         name: 'AppHeader',
+        emits:['inputSearch'],
         data() {
             return {
                 store
@@ -19,7 +20,7 @@
       <a href="!#">BOOLFLIX</a>
     </div>
     <div class="selection">
-      <input id="search" type="text" name="search" placeholder="Scegli il Film o la Serie TV" v-model="store.searchText" >
+      <input  @keyup.enter="$emit('inputSearch')" id="search" type="text" name="search" placeholder="Scegli il Film o la Serie TV" v-model="store.searchText" >
       <button @click="$emit('inputSearch')">Cerca</button>
     </div>
   </header>
