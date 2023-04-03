@@ -15,17 +15,31 @@
 </script>
 
 <template>
-    <h1 v-if="store.seriesList.length > 0">Lista Serie TV:</h1>
-    <div class="box" v-for="(serie,i) in store.seriesList" :key="i">
-        <SingleSeries
-            :title="serie.name"
-            :originalTitle="serie.original_name"
-            :language="serie.original_language"
-            :vote="Math.floor(serie.vote_average / 2)"
-            :image="serie.poster_path"
-        />
+    <div>
+        <h3 v-if="store.seriesList.length > 0"> SERIE TV:</h3>
+        <div class="container">
+            <div class="box" v-for="(serie,i) in store.seriesList" :key="i">
+                <SingleSeries
+                :title="serie.name"
+                :originalTitle="serie.original_name"
+                :language="serie.original_language"
+                :vote="Math.floor(serie.vote_average / 2)"
+                :image="serie.backdrop_path"
+                :overview="serie.overview"
+                />
+            </div>
+
+        </div>
+       
+
     </div>
+    
 </template>
 
 <style lang="scss" scoped>
+.container .box{
+    width: calc(100% / 4 - 20px);
+    height: 230px;
+    
+}
 </style>

@@ -7,3 +7,33 @@
 a{
     text-decoration: none;
 }
+body{
+    background-color: #434343;
+}
+main{
+    width: 90%;
+    margin: 10px auto;
+    
+}
+h3{
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: white;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .box{
+        width: calc(100% / 6 - 20px);
+        height: 400px;
+        margin-bottom: 50px;
+    }
+    .flag{
+        width: 50px;
+        display: inline-block;
+        img{
+            width: 100%;
+        }
+    }
+}

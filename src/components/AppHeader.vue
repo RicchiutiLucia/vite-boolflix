@@ -48,7 +48,7 @@ header{
 #search {
   border-radius: 5px;
   padding: 2px 5px;
-  cursor: pointer
+  
 }
 button {
   margin: 0 .5rem;
