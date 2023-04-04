@@ -1,5 +1,4 @@
 <script>
-
 export default {
     name:'SingleFilm',
     props:{
@@ -8,7 +7,9 @@ export default {
         language:String,
         vote:Number,
         image:String,
-        overview:String
+        overview:String,
+        genreList: Array,
+        movieGenres: Array
     },
     data(){
       return{
@@ -29,7 +30,18 @@ export default {
       getImage(){
         let ImageApi='https://image.tmdb.org/t/p/w342';
             this.imageApi=ImageApi+this.image;
-      }
+      },
+        getGenres() {
+            let itemGenres = []
+            this.genreList.forEach(el => {
+                for (let i = 0; i < this.movieGenres.length; i++) {
+                    if (el.id === this.movieGenres[i]) {
+                        itemGenres.push(el);
+                    }
+                }
+            })
+            return itemGenres;
+        }
     },
     created(){
       this.getValutation();
@@ -69,8 +81,7 @@ export default {
         </div>
           <h6 v-html="star" class="star"></h6>
           <p>{{ this.overview }}</p>
-
-            
+          
         </div>
         
                        
@@ -112,7 +123,6 @@ export default {
       width: 20px;
     }
 }
-
 .card {
     background-color: black;
     width: 100%;

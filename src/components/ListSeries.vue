@@ -10,19 +10,15 @@
             return{
                 store
             }
-        },
-        methods:{
-          
-
         }
-    }
+}
 </script>
 
 <template>
     <div>
         <h3 v-if="store.seriesList.length > 0"> SERIE TV:</h3>
         <div class="container">
-            <div class="box" v-for="(serie) in store.seriesList" :key="serie.id" >
+            <div class="box" v-for="(serie) in store.seriesList" :key="serie.id">
                 <SingleSeries
                 :title="serie.name"
                 :originalTitle="serie.original_name"
@@ -30,6 +26,7 @@
                 :vote="Math.floor(serie.vote_average / 2)"
                 :image="serie.backdrop_path"
                 :overview="serie.overview"
+                :genres="serie.genre_ids"
                 />
             </div>
 

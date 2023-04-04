@@ -7,11 +7,13 @@ export default {
         language:String,
         vote:Number,
         image:String,
-        overview:String
+        overview:String,
+       
     },
     data(){
         return{
-            star:''
+            star:'',
+           
         }
     },
     methods:{
