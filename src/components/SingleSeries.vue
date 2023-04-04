@@ -8,6 +8,8 @@ export default {
         vote:Number,
         image:String,
         overview:String,
+        genreList: Array,
+        movieGenres: Array
        
     },
     data(){
@@ -35,6 +37,20 @@ export default {
     created(){
       this.getValutation();
       this.getImage();
+    },
+    computed:{
+      getGenres() {
+            let itemGenres = []
+            this.genreList.forEach(el => {
+                for (let i = 0; i < this.movieGenres.length; i++) {
+                    if (el.id == this.movieGenres[i]) {
+                        itemGenres.push(el);
+                    }
+                }
+            })
+            return itemGenres;
+        }
+
     }
 }
 </script>
@@ -69,6 +85,9 @@ export default {
                 </div>
                 <h6 v-html="star" class="star"></h6>
                 <p>{{ this.overview }}</p>
+                <div class="genres">
+                    GENRE: <div class="genre" v-for="genre in getGenres"> {{ genre.name }} </div>
+                </div>
                
             </div>
 
@@ -107,6 +126,11 @@ export default {
     }
     .flag{
       width: 20px;
+    }
+    .genre{
+      font-size: 14px;
+      font-weight: bolder;
+      margin-top: 5px;
     }
 }
 

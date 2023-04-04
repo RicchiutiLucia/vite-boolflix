@@ -47,7 +47,21 @@ export default{
           })
       }
 
-    }
+    },
+    callGenreList() {
+        axios.get('https://api.themoviedb.org/3/genre/movie/list', {
+          params: {
+            api_key:'addb82fb3a7f441748d95485d50f36bc' ,
+          }
+        })
+        .then((response) => {
+          store.genreList = response.data.genres;
+          console.log(store.genreList);
+        })
+      }
+  },
+  mounted(){
+    this.callGenreList();
   }
 }
 

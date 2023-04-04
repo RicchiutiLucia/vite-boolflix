@@ -31,21 +31,26 @@ export default {
         let ImageApi='https://image.tmdb.org/t/p/w342';
             this.imageApi=ImageApi+this.image;
       },
-        getGenres() {
+        
+    },
+    created(){
+      this.getValutation();
+      this.getImage();
+      
+    },
+    computed:{
+      getGenres() {
             let itemGenres = []
             this.genreList.forEach(el => {
                 for (let i = 0; i < this.movieGenres.length; i++) {
-                    if (el.id === this.movieGenres[i]) {
+                    if (el.id == this.movieGenres[i]) {
                         itemGenres.push(el);
                     }
                 }
             })
             return itemGenres;
         }
-    },
-    created(){
-      this.getValutation();
-      this.getImage();
+
     }
 }
 </script>
@@ -81,7 +86,9 @@ export default {
         </div>
           <h6 v-html="star" class="star"></h6>
           <p>{{ this.overview }}</p>
-          
+          <div class="genres">
+            GENRE: <div class="genre" v-for="genre in getGenres"> {{ genre.name }} </div>
+          </div>
         </div>
         
                        
@@ -121,6 +128,11 @@ export default {
     }
     .flag{
       width: 20px;
+    }
+    .genre{
+      font-size: 14px;
+      font-weight: bolder;
+      margin-top: 5px;
     }
 }
 .card {

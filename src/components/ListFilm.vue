@@ -10,16 +10,6 @@
             return{
                 store
             }
-        },
-        methods:{
-            getCastMovie(id){
-            store.castSerie = [];
-            axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=addb82fb3a7f441748d95485d50f36bc`)
-                .then(response =>{
-                this.store.castArray=response.data.cast;
-            });
-        },
-            
         }
     }
 </script>
@@ -37,6 +27,8 @@
                 :vote="Math.floor(film.vote_average / 2)"
                 :image="film.poster_path"
                 :overview="film.overview"
+                :genreList="store.genreList"
+                :movieGenres="film.genre_ids"
 
                 />
                 </div>
