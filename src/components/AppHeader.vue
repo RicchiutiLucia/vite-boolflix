@@ -3,7 +3,6 @@
   import { store } from '../store.js';
     export default {
         name: 'AppHeader',
-        emits:['inputSearch'],
         data() {
             return {
                 store

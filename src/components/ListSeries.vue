@@ -10,6 +10,10 @@
             return{
                 store
             }
+        },
+        methods:{
+          
+
         }
     }
 </script>
@@ -18,7 +22,7 @@
     <div>
         <h3 v-if="store.seriesList.length > 0"> SERIE TV:</h3>
         <div class="container">
-            <div class="box" v-for="(serie,i) in store.seriesList" :key="i">
+            <div class="box" v-for="(serie) in store.seriesList" :key="serie.id" >
                 <SingleSeries
                 :title="serie.name"
                 :originalTitle="serie.original_name"

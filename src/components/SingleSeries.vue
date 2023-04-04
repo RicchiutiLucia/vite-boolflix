@@ -66,10 +66,10 @@ export default {
                     />
                 </div>
                 <h6 v-html="star" class="star"></h6>
-                <p>{{ overview }}</p>
-
-                
+                <p>{{ this.overview }}</p>
+               
             </div>
+
 
             </div>
             
@@ -94,7 +94,6 @@ export default {
     .star{
         font-size: 10px;
         color: #ff0;
-        border: 1px solid black;
     }
     p{
         color: white;

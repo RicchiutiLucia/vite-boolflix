@@ -68,10 +68,12 @@ export default {
             />
         </div>
           <h6 v-html="star" class="star"></h6>
-          <p>{{ overview }}</p>
+          <p>{{ this.overview }}</p>
+
             
         </div>
-
+        
+                       
         </div>
        
 
