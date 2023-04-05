@@ -10,6 +10,15 @@
             return{
                 store
             }
+        },
+        methods:{
+            selectorArraySeries(){
+                if(this.store.filmFiltered==""){
+                    return this.store.seriesList;
+                }else{
+                    return this.store.serieFiltered;
+                }
+            }
         }
 }
 </script>
@@ -18,7 +27,7 @@
     <div>
         <h3 v-if="store.seriesList.length > 0"> SERIE TV:</h3>
         <div class="container">
-            <div class="box" v-for="(serie) in store.seriesList" :key="serie.id">
+            <div class="box" v-for="(serie) in selectorArraySeries()" :key="serie.id">
                 <SingleSeries
                 :title="serie.name"
                 :originalTitle="serie.original_name"

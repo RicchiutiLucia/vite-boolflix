@@ -66,7 +66,8 @@ export default{
         .then((response) => {
           store.genreList = response.data.genres;
           console.log(store.genreList);
-        })
+        });
+       
       }
   },
   mounted(){
@@ -79,7 +80,7 @@ export default{
 
 <template>
 
-  <AppHeader  @inputSearch="getFilmAndSeries"></AppHeader>
+  <AppHeader  @inputSearch="getFilmAndSeries" ></AppHeader>
 
   <main>
     <ListFilm/>

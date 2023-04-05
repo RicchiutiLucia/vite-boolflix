@@ -18,6 +18,7 @@
     <div class="title">
       <a href="!#">BOOLFLIX</a>
     </div>
+    
     <div class="selection">
       <input  @keyup.enter="$emit('inputSearch')" id="search" type="text" name="search" placeholder="Scegli il Film o la Serie TV" v-model="store.searchText" >
       <button @click="$emit('inputSearch')">Cerca</button>
@@ -44,11 +45,12 @@ header{
     font-weight: bolder;
   }
 }
-#search {
+#search{
   border-radius: 5px;
   padding: 2px 5px;
   
 }
+
 button {
   margin: 0 .5rem;
   background-color: red;

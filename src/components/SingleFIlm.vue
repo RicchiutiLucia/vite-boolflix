@@ -31,6 +31,7 @@ export default {
         let ImageApi='https://image.tmdb.org/t/p/w342';
             this.imageApi=ImageApi+this.image;
       },
+      
         
     },
     created(){
@@ -108,6 +109,7 @@ export default {
     width: 100%;
     height: 100%;
     text-align: center;
+    overflow: hidden;
     
     img{
       width: 100%;

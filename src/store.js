@@ -6,5 +6,8 @@ export const store = reactive(
         moviesList:[],
         seriesList:[],
         genreList: [],
+        selectorGenre:"",
+        filmFiltered:[],
+        serieFiltered:[],
     }
 );
