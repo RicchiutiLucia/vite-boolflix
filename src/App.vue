@@ -57,6 +57,15 @@ export default{
         .then((response) => {
           store.genreList = response.data.genres;
           console.log(store.genreList);
+        });
+        axios.get('https://api.themoviedb.org/3/genre/tv/list', {
+          params: {
+            api_key:'addb82fb3a7f441748d95485d50f36bc' ,
+          }
+        })
+        .then((response) => {
+          store.genreList = response.data.genres;
+          console.log(store.genreList);
         })
       }
   },

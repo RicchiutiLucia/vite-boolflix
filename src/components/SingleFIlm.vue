@@ -108,7 +108,7 @@ export default {
     width: 100%;
     height: 100%;
     text-align: center;
-    overflow: hidden;
+    
     img{
       width: 100%;
       height: 100%;
@@ -169,5 +169,6 @@ export default {
     transform: rotateY(180deg);
     z-index: 1;
     padding: 20px;
+    
 }
 </style>
